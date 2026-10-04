@@ -78,7 +78,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 2rem 1.5rem 4rem;
+      padding: clamp(0.5rem, 2vh, 2rem) 1.5rem clamp(1rem, 4vh, 4rem);
     }
 
     .eyebrow {
@@ -87,13 +87,13 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--orange);
-      margin-bottom: 1.5rem;
+      margin-bottom: clamp(0.75rem, 2.2vh, 1.5rem);
     }
     .eyebrow::before { content: '// '; opacity: 0.5; }
 
     .code {
       font-family: var(--display);
-      font-size: clamp(6rem, 24vw, 14rem);
+      font-size: clamp(4.5rem, min(24vw, 26vh), 14rem);
       line-height: 0.85;
       letter-spacing: 0.01em;
       color: var(--text);
@@ -168,7 +168,7 @@
       letter-spacing: 0.2em;
       color: var(--orange);
       height: 1.2em;
-      margin-top: 1rem;
+      margin-top: clamp(0.4rem, 1.2vh, 1rem);
       opacity: 0;
       transition: opacity 0.3s;
     }
@@ -184,7 +184,7 @@
       font-family: var(--display);
       font-size: clamp(1.4rem, 3.5vw, 2.1rem);
       letter-spacing: 0.01em;
-      margin: 1rem 0 0.75rem;
+      margin: clamp(0.5rem, 1.6vh, 1rem) 0 clamp(0.4rem, 1.2vh, 0.75rem);
     }
 
     .sub {
@@ -192,7 +192,7 @@
       color: var(--text-muted);
       font-size: 14px;
       line-height: 1.6;
-      margin-bottom: 2.5rem;
+      margin-bottom: clamp(1.25rem, 3.5vh, 2.5rem);
     }
 
     .actions {
@@ -200,7 +200,7 @@
       flex-wrap: wrap;
       gap: 0.75rem;
       justify-content: center;
-      margin-bottom: 3.5rem;
+      margin-bottom: clamp(1.25rem, 4.5vh, 3.5rem);
     }
 
     .btn {
@@ -252,7 +252,7 @@
       position: relative;
       z-index: 2;
       text-align: center;
-      padding: 1.5rem;
+      padding: clamp(0.75rem, 2vh, 1.5rem);
       font-family: var(--mono);
       font-size: 10px;
       color: var(--text-dim);
@@ -261,6 +261,18 @@
 
     @media (max-width: 480px) {
       nav { padding: 1.25rem 1.5rem; }
+      .sub { font-size: 13px; }
+    }
+    /* pantallas bajas (notebooks, celulares chicos): todo entra sin scroll */
+    @media (max-height: 820px) {
+      nav { padding-top: 1rem; padding-bottom: 0.5rem; }
+      .links { display: none; }
+      .actions { margin-bottom: 0.5rem; }
+    }
+    @media (max-height: 680px) {
+      .nav-logo { font-size: 1.6rem; }
+      .sub { font-size: 13px; line-height: 1.5; }
+      .btn { padding: 0.7rem 1.1rem; }
     }
   </style>
 </head>
@@ -348,7 +360,7 @@
             document.getElementById('eyebrow').textContent = 'Paradoja detectada';
             document.getElementById('msg').textContent = 'Esta página existe. En otra línea temporal.';
             document.getElementById('sub').textContent =
-              'Llegaste a 88 millas por hora y te saliste de la línea temporal. Acá todavía no se inventó la web que buscabas. Te llevo de vuelta al presente.';
+              'Llegaste a 88 millas por hora y te saliste de la línea temporal. Acá la web que buscabas todavía no existe.';
             document.getElementById('volver').textContent = 'Volver a esta línea temporal →';
             setTimeout(() => mph.classList.remove('on'), 2500);
           }
