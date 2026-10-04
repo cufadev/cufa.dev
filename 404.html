@@ -102,13 +102,82 @@
     }
     .code span { color: var(--orange); }
 
-    .code:hover {
-      animation: glitch 0.4s steps(2, end) infinite;
+    .code span { cursor: pointer; display: inline-block; transition: transform 0.08s; }
+    .code span:active { transform: scale(0.94); }
+
+    /* Glitch en ráfagas: dos copias del texto (cian y magenta) recortadas en franjas */
+    .code::before,
+    .code::after {
+      content: attr(data-text);
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0;
     }
-    @keyframes glitch {
-      0% { text-shadow: 2px 0 var(--orange), -2px 0 var(--orange-dim); transform: translate(0,0); }
-      50% { text-shadow: -2px 0 var(--orange), 2px 0 var(--orange-dim); transform: translate(1px,-1px); }
-      100% { text-shadow: 2px 0 var(--orange), -2px 0 var(--orange-dim); transform: translate(0,0); }
+    .code::before { color: #00ffcc; animation: slice-a 4.2s steps(1) infinite; }
+    .code::after  { color: #ff0066; animation: slice-b 4.2s steps(1) infinite; }
+    .code { animation: shake 4.2s steps(1) infinite; }
+
+    @keyframes slice-a {
+      0%, 86%, 100% { opacity: 0; clip-path: inset(0 0 100% 0); transform: none; }
+      87% { opacity: .9; clip-path: inset(12% 0 62% 0); transform: translate(-7px, 0); }
+      89% { opacity: .9; clip-path: inset(58% 0 18% 0); transform: translate(6px, 0); }
+      91% { opacity: .9; clip-path: inset(30% 0 48% 0); transform: translate(-3px, 0); }
+      93% { opacity: .9; clip-path: inset(80% 0 4% 0);  transform: translate(9px, 0); }
+      95% { opacity: 0; }
+    }
+    @keyframes slice-b {
+      0%, 87%, 100% { opacity: 0; clip-path: inset(0 0 100% 0); transform: none; }
+      88% { opacity: .9; clip-path: inset(40% 0 35% 0); transform: translate(8px, 0); }
+      90% { opacity: .9; clip-path: inset(5% 0 80% 0);  transform: translate(-6px, 0); }
+      92% { opacity: .9; clip-path: inset(66% 0 10% 0); transform: translate(4px, 0); }
+      94% { opacity: 0; }
+    }
+    @keyframes shake {
+      0%, 86%, 96%, 100% { transform: none; }
+      88% { transform: translate(2px, -1px) skewX(-4deg); }
+      90% { transform: translate(-3px, 1px); }
+      92% { transform: translate(1px, 0) skewX(3deg); }
+      94% { transform: translate(-1px, -1px); }
+    }
+
+    /* Glitch fuerte (al llegar a 88 MPH) */
+    .code.storm, .code.storm::before, .code.storm::after { animation-duration: 0.35s; }
+    body.flash::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(0deg, rgba(0,255,204,0.08) 0 2px, transparent 2px 5px),
+        rgba(255,77,0,0.18);
+      animation: flash 0.9s steps(6) forwards;
+    }
+    @keyframes flash {
+      0% { opacity: 1; transform: translateX(0); }
+      30% { opacity: .6; transform: translateX(-12px); }
+      60% { opacity: .9; transform: translateX(10px); }
+      100% { opacity: 0; transform: none; }
+    }
+
+    /* Velocímetro del easter egg */
+    .mph {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--orange);
+      height: 1.2em;
+      margin-top: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .mph.on { opacity: 1; }
+    .mph b { color: var(--text); font-weight: 400; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .code, .code::before, .code::after, body.flash::after { animation: none !important; }
+      .code::before, .code::after { display: none; }
     }
 
     .msg {
@@ -203,16 +272,17 @@
   </nav>
 
   <main>
-    <p class="eyebrow">Error 404</p>
-    <h1 class="code">4<span>0</span>4</h1>
-    <p class="msg">Esta página no existe.</p>
-    <p class="sub">
-      O se movió, o nunca estuvo, o la tipeaste mal.
+    <p class="eyebrow" id="eyebrow">Error 404</p>
+    <h1 class="code" id="code" data-text="404">4<span id="cero" title="¿Y si acelerás?">0</span>4</h1>
+    <p class="mph" id="mph" aria-live="polite"></p>
+    <p class="msg" id="msg">Esta página no existe.</p>
+    <p class="sub" id="sub">
+      O se movió, o nunca estuvo, o hubo una paradoja espacio-temporal.
       De las tres, la única que puedo arreglar desde acá es traerte de vuelta.
     </p>
 
     <div class="actions">
-      <a href="index.html" class="btn btn-primary">Volver al inicio →</a>
+      <a href="index.html" class="btn btn-primary" id="volver">Volver al inicio →</a>
       <a href="index.html#casos" class="btn btn-ghost">Ver casos</a>
     </div>
 
@@ -229,5 +299,62 @@
     CUFA · Buenos Aires
   </footer>
 
+  <script>
+    /* Easter egg: clics en el 0 naranja = acelerar. A 88 MPH, paradoja. */
+    (() => {
+      const cero = document.getElementById('cero');
+      const code = document.getElementById('code');
+      const mph = document.getElementById('mph');
+      const quiet = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let speed = 0, done = false, decay;
+
+      const show = () => {
+        mph.innerHTML = speed ? `<b>${String(Math.round(speed)).padStart(2, '0')}</b> MPH` : '';
+        mph.classList.toggle('on', speed > 0);
+      };
+
+      cero.addEventListener('click', () => {
+        if (done) return;
+        speed = Math.min(88, speed + 9 + Math.random() * 6);
+        show();
+        clearInterval(decay);
+        if (speed >= 88) return paradoja();
+        // si dejás de hacer clic, el DeLorean frena
+        decay = setInterval(() => {
+          speed = Math.max(0, speed - 4);
+          show();
+          if (!speed) clearInterval(decay);
+        }, 250);
+      });
+
+      function paradoja() {
+        done = true;
+        mph.innerHTML = '<b>88</b> MPH ⚡';
+        if (!quiet) {
+          document.body.classList.add('flash');
+          code.classList.add('storm');
+        }
+        // los años pasan a toda velocidad hasta frenar en 1985
+        let n = 0;
+        const roll = setInterval(() => {
+          const y = String(1885 + Math.floor(Math.random() * 230));
+          code.textContent = y;
+          code.dataset.text = y;
+          if (++n > (quiet ? 1 : 18)) {
+            clearInterval(roll);
+            code.innerHTML = '19<span>85</span>';
+            code.dataset.text = '1985';
+            code.classList.remove('storm');
+            document.getElementById('eyebrow').textContent = 'Paradoja detectada';
+            document.getElementById('msg').textContent = 'Esta página existe. En otra línea temporal.';
+            document.getElementById('sub').textContent =
+              'Llegaste a 88 millas por hora y te saliste de la línea temporal. Acá todavía no se inventó la web que buscabas. Te llevo de vuelta al presente.';
+            document.getElementById('volver').textContent = 'Volver a esta línea temporal →';
+            setTimeout(() => mph.classList.remove('on'), 2500);
+          }
+        }, 60);
+      }
+    })();
+  </script>
 </body>
 </html>
