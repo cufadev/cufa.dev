@@ -27,7 +27,9 @@ function tickLoader() {
 const MIN_LOADER_MS = 2000;
 const loaderStart = Date.now();
 
-window.addEventListener('load', () => {
+// No esperar a 'load': los iframes de los casos son sitios enteros y lo
+// demoran. El script va al final del body, así que el DOM ya está listo.
+function finishLoader() {
   const elapsed = Date.now() - loaderStart;
   const wait = Math.max(0, MIN_LOADER_MS - elapsed);
   setTimeout(() => {
@@ -35,7 +37,13 @@ window.addEventListener('load', () => {
     loaderPct.textContent = '100';
     setTimeout(() => loader.classList.add('hidden'), 400);
   }, wait);
-});
+}
+
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(finishLoader);
+} else {
+  finishLoader();
+}
 
 tickLoader();
 

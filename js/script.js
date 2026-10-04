@@ -33,7 +33,13 @@ function tickLoader() {
 const MIN_LOADER_MS = 2500;
 const loaderStart = Date.now();
 
-window.addEventListener('load', () => {
+// Tope: si 'load' se demora (iframes, videos), el loader se va igual.
+const MAX_LOADER_MS = 6000;
+let loaderDone = false;
+
+function finishLoader() {
+  if (loaderDone) return;
+  loaderDone = true;
   const elapsed = Date.now() - loaderStart;
   const wait = Math.max(0, MIN_LOADER_MS - elapsed);
   setTimeout(() => {
@@ -44,7 +50,10 @@ window.addEventListener('load', () => {
       document.querySelector('.hero-content').classList.add('hero-loaded');
     }, 400);
   }, wait);
-});
+}
+
+window.addEventListener('load', finishLoader);
+setTimeout(finishLoader, MAX_LOADER_MS);
 
 tickLoader();
 
