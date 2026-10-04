@@ -511,6 +511,47 @@ section { padding: 6rem 3rem; }
   font-size: 22px;
 }
 
+.caso-bloque {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin-bottom: 1.1rem;
+}
+
+.caso-bloque-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 0.35rem;
+}
+
+.caso-antes-ahora {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.3rem 0.75rem;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+.caso-antes-ahora span:nth-child(3n+1) {
+  color: var(--text-dim);
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 77, 0, 0.5);
+}
+
+.caso-antes-ahora span:nth-child(3n) {
+  color: var(--text);
+}
+
+.caso-antes-ahora b {
+  color: var(--orange);
+  font-weight: 400;
+}
+
 @media (max-width: 900px) {
   .caso-card--destacado {
     display: flex;
