@@ -491,6 +491,36 @@ section { padding: 6rem 3rem; }
   flex-direction: column;
 }
 
+/* Caso destacado: ancho completo, sitio en vivo a la izquierda */
+.caso-card--destacado {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+}
+
+.caso-card--destacado .caso-thumb {
+  max-height: none;
+}
+
+.caso-card--destacado .caso-thumb iframe {
+  height: 100%;
+  min-height: 460px;
+}
+
+.caso-card--destacado .caso-nombre {
+  font-size: 22px;
+}
+
+@media (max-width: 900px) {
+  .caso-card--destacado {
+    display: flex;
+  }
+  .caso-card--destacado .caso-thumb iframe {
+    height: 480px;
+    min-height: 0;
+  }
+}
+
 .caso-thumb {
   width: 100%;
   max-height: 320px;
