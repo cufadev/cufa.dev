@@ -344,6 +344,7 @@ const translations = {
     'galeria.titulo': 'Foto<br><span>grafía</span>',
     'galeria.desc': 'La misma sensibilidad que aplico a la fotografía callejera, gastronómica y documental la traigo al producto digital. El ojo que distingue una buena composición también distingue una buena interfaz.',
     'galeria.btn': 'Ver galería completa',
+    'casos.btn': 'Ver más proyectos',
     'stack.label': 'Stack técnico',
     'contacto.label': 'Siguiente paso',
     'contacto.label.footer': 'Contacto',
@@ -458,6 +459,7 @@ const translations = {
     'galeria.titulo': 'Photo<br><span>graphy</span>',
     'galeria.desc': 'The same sensibility I apply to street, gastronomic, and documentary photography I bring to the digital product. The eye that distinguishes a good composition also distinguishes a good interface.',
     'galeria.btn': 'View full gallery',
+    'casos.btn': 'See more projects',
     'stack.label': 'Technical stack',
     'contacto.label': 'Next step',
     'contacto.label.footer': 'Contact',
@@ -482,8 +484,9 @@ function applyLang(lang) {
       if (val !== undefined) el.innerHTML = val;
     });
 
-    const galBtn = document.querySelector('.btn-galeria');
-    if (galBtn) galBtn.setAttribute('data-after', lang === 'es' ? 'Ver galería →' : 'View gallery →');
+    document.querySelectorAll('.btn-galeria').forEach(btn => {
+      btn.setAttribute('data-after', lang === 'es' ? btn.dataset.afterEs : btn.dataset.afterEn);
+    });
 
     document.querySelectorAll('.solucion-demo-btn').forEach(btn => {
       btn.setAttribute('data-after', translations[lang]['solucion.demo.btn']);
@@ -518,8 +521,7 @@ window.addEventListener('scroll', () => {
 });
 
 /* ── GALERIA BTN GLITCH ── */
-const galBtn = document.querySelector('.btn-galeria');
-if (galBtn) {
+document.querySelectorAll('.btn-galeria').forEach(galBtn => {
   galBtn.addEventListener('mouseenter', () => {
     galBtn.classList.remove('emptying');
     galBtn.classList.add('filling');
@@ -533,7 +535,7 @@ if (galBtn) {
       galBtn.classList.remove('emptying');
     }
   });
-}
+});
 
 /* ── CHAT MOCKUP LOOP ── */
 const chatMockup = document.querySelector('.chat-mockup');
