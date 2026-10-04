@@ -7,7 +7,7 @@ CUFA (Facundo González) trabaja solo o con colaboradores en proyectos de softwa
 ## Servicios
 
 - [Desarrollo Full-Stack](https://cufagon.xyz/#servicios): aplicaciones web, plataformas SaaS, paneles de gestión.
-- [Automatización con IA](https://cufagon.xyz/#servicios): agentes WhatsApp, bots de atención, scraping y generación de leads.
+- [Automatización con IA](https://cufagon.xyz/#servicios): agentes de WhatsApp y Telegram, bots de atención, scraping y generación de leads.
 - [Fotografía de producto y eventos](https://cufagon.xyz/#fotografia): cobertura con Nikon D810.
 
 ## Proyectos
