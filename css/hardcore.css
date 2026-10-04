@@ -1,0 +1,179 @@
+/* ══════════════════════════════════════════════
+   VECTOR HARDCORE — capa gráfica del hero
+   Para desactivar: sacar el <link> a este archivo
+   y el bloque <div class="hc-layer"> del index.
+   ══════════════════════════════════════════════ */
+
+.hero-content { z-index: 3; }
+
+.hc-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ── Esquinas de registro ── */
+.hc-corner {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  color: var(--orange);
+}
+.hc-corner--tl { top: 5.5rem; left: 1.5rem; }
+.hc-corner--tr { top: 5.5rem; right: 1.5rem; transform: scaleX(-1); }
+.hc-corner--bl { bottom: 3.5rem; left: 1.5rem; transform: scaleY(-1); }
+.hc-corner--br { bottom: 3.5rem; right: 1.5rem; transform: scale(-1); }
+
+/* ── Etiquetas técnicas ── */
+.hc-tag {
+  position: absolute;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+.hc-tag b { color: var(--orange); font-weight: 400; }
+.hc-tag--top { top: 6rem; right: 4.5rem; }
+.hc-tag--coords { bottom: 4rem; left: 4.5rem; color: var(--text-muted); }
+
+/* ── Regla vertical ── */
+.hc-ruler {
+  position: absolute;
+  top: 9rem;
+  bottom: 7rem;
+  right: 1.9rem;
+  width: 10px;
+  background:
+    repeating-linear-gradient(to bottom, var(--text-dim) 0 1px, transparent 1px 8px) right / 5px 100% no-repeat,
+    repeating-linear-gradient(to bottom, var(--orange) 0 1px, transparent 1px 40px) right / 10px 100% no-repeat;
+}
+
+/* ── Banda de peligro con corte diagonal ── */
+.hc-hazard {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 58%;
+  height: 22px;
+  background: repeating-linear-gradient(-45deg, var(--orange) 0 9px, transparent 9px 18px);
+  clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%);
+  animation: hc-march 1.6s linear infinite;
+  opacity: 0.9;
+}
+.hc-hazard-label {
+  position: absolute;
+  right: 3rem;
+  bottom: 0;
+  height: 22px;
+  padding: 0 0.75rem;
+  display: flex;
+  align-items: center;
+  background: var(--bg);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+@keyframes hc-march { to { background-position: 25.46px 0; } }
+
+/* ══════════════════════════════════════════════
+   VESTIGIOS — detalles sueltos en el resto del sitio
+   ══════════════════════════════════════════════ */
+
+/* Selección de texto */
+::selection { background: var(--orange); color: var(--bg); }
+
+/* Etiquetas de sección numeradas: [01] PROPUESTA DE VALOR —— */
+body { counter-reset: hc-sec; }
+.section-label { counter-increment: hc-sec; }
+.section-label::before {
+  content: '[' counter(hc-sec, decimal-leading-zero) ']';
+  color: var(--text-dim);
+}
+
+/* Tarjetas: esquina inferior cortada a 45° + solapa naranja en hover */
+.caso-card,
+.solucion-card,
+.galeria-item {
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+}
+.caso-card::after,
+.solucion-card::after,
+.galeria-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 4;
+  border-top: 18px solid var(--orange);
+  border-left: 18px solid transparent;
+  transform: scale(0);
+  transform-origin: top right;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+}
+.caso-card:hover::after,
+.solucion-card:hover::after,
+.galeria-item:hover::after { transform: scale(1); }
+
+/* Stack: cruces de registro en cada celda */
+.stack-item { position: relative; }
+.stack-item::before {
+  content: '+';
+  position: absolute;
+  top: 0.4rem;
+  left: 0.55rem;
+  font-family: var(--mono);
+  font-size: 10px;
+  line-height: 1;
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+.stack-item:hover::before { color: var(--orange); }
+
+/* Contacto: esquinas de registro que cierran el marco del hero */
+.contacto { position: relative; }
+.contacto::before,
+.contacto::after {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 0 solid var(--orange);
+  pointer-events: none;
+}
+.contacto::before { top: 1.5rem; left: 1.5rem; border-top-width: 1.5px; border-left-width: 1.5px; }
+.contacto::after { bottom: 1.5rem; right: 1.5rem; border-bottom-width: 1.5px; border-right-width: 1.5px; }
+
+/* Footer: tramo de banda de peligro sobre el borde */
+footer { position: relative; }
+footer::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 32%;
+  height: 4px;
+  background: repeating-linear-gradient(-45deg, var(--orange) 0 5px, transparent 5px 10px);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
+}
+
+/* ── Mobile ── */
+@media (max-width: 900px) {
+  .hc-ruler, .hc-tag--coords, .hc-corner--bl, .hc-corner--br { display: none; }
+  .hc-tag--top { display: none; }
+  .hc-corner--tl, .hc-corner--tr { top: 5rem; }
+  .hc-hazard { width: 75%; }
+  .hc-hazard-label { right: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hc-hazard { animation: none; }
+}
