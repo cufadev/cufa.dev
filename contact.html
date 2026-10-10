@@ -74,7 +74,8 @@
     .details .row:nth-child(3) { animation-delay: 0.66s; }
     .details .row:nth-child(4) { animation-delay: 0.72s; }
     .details .row:nth-child(5) { animation-delay: 0.78s; }
-    footer.dev-credit { animation-delay: 0.86s; }
+    .details .row:nth-child(6) { animation-delay: 0.84s; }
+    footer.dev-credit { animation-delay: 0.92s; }
     @keyframes line-in {
       0%   { transform: scaleX(0); background: #00ffcc; }
       15%  { transform: scaleX(0.4); background: #00ffcc; }
@@ -178,6 +179,8 @@
     }
     .row:hover, .row:active { border-color: var(--orange); transform: translateX(3px); }
     .row:hover .ico svg, .row:active .ico svg { stroke: var(--orange); }
+    .row-featured { border-color: var(--orange-dim); }
+    .row-featured .ico svg { stroke: var(--orange); }
     .row .ico { width: 18px; height: 18px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
     .row .ico svg { width: 18px; height: 18px; stroke: var(--text-muted); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.2s; }
     .row span.val { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -198,6 +201,9 @@
       letter-spacing: 0.1em;
       text-decoration: none;
     }
+    @media (max-height: 780px) {
+      .card { max-height: none; }
+    }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
       .reveal { opacity: 1; transform: none; }
@@ -216,6 +222,9 @@
     <p class="bio reveal">Armo la parte digital de tu negocio: webs, cartas digitales, reservas, cobros online y agentes que atienden tu WhatsApp. Si hace falta, también el hardware. Desde Buenos Aires, para Argentina y el mundo.</p>
 
     <div class="details">
+      <a class="row row-featured reveal" href="https://propuestasmenu.netlify.app/" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M9.5 8h5M9.5 12h5M9.5 16h3"/></svg></span> <span class="val">Cartas digitales · ver propuesta</span>
+      </a>
       <a class="row reveal" href="mailto:facundonic.gonzalez@gmail.com">
         <span class="ico"><svg viewBox="0 0 24 24"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg></span> <span class="val">facundonic.gonzalez@gmail.com</span>
       </a>
