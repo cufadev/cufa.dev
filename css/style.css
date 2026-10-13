@@ -226,6 +226,31 @@ nav {
   display: block;
 }
 
+.hero-h1 {
+  font-family: var(--body);
+  font-weight: 500;
+  font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin: 1.25rem 0 0;
+  max-width: 28ch;
+}
+.hero-h1 span { color: var(--orange); }
+
+.titulo-sub {
+  display: block;
+  margin-top: 1rem;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 36ch;
+}
+
 .hero-tagline {
   font-family: var(--mono);
   font-size: 10px;
@@ -1789,6 +1814,7 @@ body::before {
 }
 .hero-loaded .hero-eyebrow  { animation: fadeUp 0.6s 0.1s ease forwards; }
 .hero-loaded .hero-name     { animation: fadeUp 0.7s 0.25s ease forwards; }
+.hero-loaded .hero-h1       { animation: fadeUp 0.6s 0.35s ease forwards; }
 .hero-loaded .hero-tagline  { animation: fadeUp 0.6s 0.45s ease forwards; }
 .hero-loaded .hero-meta     { animation: fadeUp 0.6s 0.6s ease forwards; }
 .hero-loaded .hero-btns     { animation: fadeUp 0.6s 0.75s ease forwards; }
