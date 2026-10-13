@@ -1,5 +1,13 @@
 {
   "version": 2,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.cufadev.xyz" }],
+      "destination": "https://cufadev.xyz/$1",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
