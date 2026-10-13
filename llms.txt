@@ -6,6 +6,7 @@ CUFA (Facundo González) trabaja de punta a punta: diseño, programación y pues
 
 ## Servicios
 
+- [Carta digital para restaurantes y bares](https://cufadev.xyz/carta-digital/): carta con QR que el local actualiza desde una planilla, con demos reales y precios.
 - [Cartas digitales, reservas y paneles](https://cufadev.xyz/#casos): sistemas completos para restaurantes, bares y comercios.
 - [Soluciones listas con demos](https://cufadev.xyz/#soluciones): productos que ya funcionan y se pueden probar en vivo.
 - [Automatización con IA](https://cufadev.xyz/#casos): agentes de WhatsApp y Telegram, bots de atención, scraping y generación de leads.

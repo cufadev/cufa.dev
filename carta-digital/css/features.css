@@ -1,0 +1,6 @@
+/* Sección: qué incluye. */
+.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 36px}
+@media (max-width:700px){.feat{grid-template-columns:1fr}}
+.feat div{padding-left:22px;position:relative;font-size:16px}
+.feat div::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;background:var(--accent)}
+.feat small{display:block;color:var(--ink-soft);font-size:14px}

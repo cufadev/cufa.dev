@@ -1,0 +1,4 @@
+/* Preferencias de movimiento reducido (va al final para ganar la cascada). */
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}summary::after{transition:none}}
+@media (prefers-reduced-motion:reduce){.wa-fab,.demo .shot img{transition:none}.demo:hover .shot img{transform:none}}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}

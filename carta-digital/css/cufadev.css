@@ -1,0 +1,36 @@
+/* Adaptación a la estética de cufadev.xyz: tema oscuro fijo, mismos colores y tipografías que el portfolio.
+   Va al final: pisa los tokens de tokens.css sin tocar el resto de las hojas. */
+:root:root:root{
+  color-scheme:dark;
+  --ground:#0a0a0a;
+  --raised:#111111;
+  --ink:#f0ede8;
+  --ink-soft:#888880;
+  --line:rgba(255,255,255,.12);
+  --accent:#ff4d00;
+  --accent-text:#ff4d00;
+  --accent-ink:#0a0a0a;
+  --font-display:'Bebas Neue',Impact,sans-serif;
+  --font-body:'DM Sans',system-ui,sans-serif;
+  --font-mono:'Space Mono',ui-monospace,monospace;
+}
+body{font-weight:300}
+.top{padding-block:20px}
+.top .logo{font-size:30px}
+.top .back{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);text-decoration:none;transition:color .15s;
+}
+.top .back:hover{color:var(--accent)}
+/* Cajas: borde fino como las tarjetas del portfolio, sin bordes claros pesados. */
+.demo{border:1px solid var(--line);background:var(--raised)}
+.demo .shot{background:#161616}
+.plan{background:var(--raised)}
+.plan.main{border-color:var(--accent);background:var(--raised)}
+.btn.ghost{border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+/* Cierre: en el portfolio no hay bloques claros; va con superficie oscura y filo naranja. */
+.cta{background:var(--raised);color:var(--ink);border:1px solid var(--line);border-top:3px solid var(--accent)}
+.cta .btn{color:#0a0a0a}
+.live__box{border:1px solid var(--line)}
+footer a:hover{color:var(--accent);border-color:var(--accent)}

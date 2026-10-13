@@ -1,0 +1,18 @@
+/* Sección: preguntas. */
+details{border-top:1px solid var(--line);padding-block:16px}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+/* Ícono +/–: dos barras; al abrir, la vertical se contrae y todo gira. */
+summary::after{
+  content:"";flex:none;width:14px;height:14px;margin-top:5px;
+  background:
+    linear-gradient(var(--accent),var(--accent)) center/100% 2px no-repeat,
+    linear-gradient(var(--accent),var(--accent)) center/2px 100% no-repeat;
+  transition:transform .3s cubic-bezier(.23,1,.32,1),background-size .3s cubic-bezier(.23,1,.32,1);
+}
+details[open]:not([data-state=closing]) summary::after{
+  transform:rotate(180deg);
+  background-size:100% 2px,2px 0;
+}
+details p{margin:10px 0 0;color:var(--ink-soft);max-width:62ch}

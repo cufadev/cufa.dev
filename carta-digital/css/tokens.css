@@ -1,0 +1,24 @@
+/* Tokens de diseño: colores, tipografías y tema oscuro. */
+:root{
+  --ground:#F6F4EF;
+  --raised:#ECE9E1;
+  --ink:#14120F;
+  --ink-soft:#5E5A52;
+  --line:#D9D5CA;
+  --accent:#FF4E01;
+  --accent-text:#C03C00; /* acento para texto chico: 4,9:1 sobre --ground (el #FF4E01 da 3:1) */
+  --accent-ink:#14120F;
+  --font-display:'Bebas Neue',Impact,sans-serif;
+  --font-body:'Instrument Sans',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#13110E;--raised:#1C1915;--ink:#F3F0E8;--ink-soft:#ABA699;--line:#34302A;--accent:#FF6A26;--accent-text:#FF6A26;--accent-ink:#13110E;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#13110E;--raised:#1C1915;--ink:#F3F0E8;--ink-soft:#ABA699;--line:#34302A;--accent:#FF6A26;--accent-text:#FF6A26;--accent-ink:#13110E;
+  color-scheme:dark;
+}

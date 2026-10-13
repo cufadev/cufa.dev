@@ -1,0 +1,21 @@
+/* Sección: ejemplos. */
+.demos{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:760px){.demos{grid-template-columns:1fr}}
+.demo{border:1.5px solid var(--ink);border-radius:2px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px}
+.demo .kind{font-family:var(--font-mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.demo h3{font-family:var(--font-display);font-weight:400;font-size:32px;line-height:1;margin:0}
+.demo p{margin:0;color:var(--ink-soft);font-size:15px}
+.demo a{margin-top:auto;padding-top:8px;font-family:var(--font-mono);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-bottom:2px solid var(--accent);align-self:flex-start;padding-bottom:3px}
+/* Captura de la carta dentro de un celular que asoma desde abajo. */
+.demo .shot{
+  display:flex;justify-content:center;align-items:flex-start;
+  height:300px;margin:-22px -22px 8px;padding:28px 0 0;overflow:hidden;
+  background:var(--raised);border:0;align-self:stretch;
+}
+.demo .shot img{
+  display:block;width:min(220px,62%);height:auto;
+  border:6px solid #16161a;border-bottom:0;border-radius:28px 28px 0 0;
+  box-shadow:0 0 0 1px rgba(255,255,255,.12),0 18px 40px -16px rgba(0,0,0,.45);
+  transition:transform .35s cubic-bezier(.23,1,.32,1);
+}
+@media (hover:hover){.demo:hover .shot img{transform:translateY(-8px)}}

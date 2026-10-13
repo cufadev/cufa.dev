@@ -1,0 +1,6 @@
+/* Sección: el problema. */
+.pains{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:760px){.pains{grid-template-columns:1fr}}
+.pain{border-top:2px solid var(--ink);padding-top:14px}
+.pain b{display:block;font-size:17px;margin-bottom:4px}
+.pain span{color:var(--ink-soft);font-size:15px}

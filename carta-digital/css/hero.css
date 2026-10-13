@@ -1,0 +1,11 @@
+/* Portada: texto + celular con video. */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-block:clamp(32px,4.5vw,48px) 56px}
+@media (max-width:820px){.hero{grid-template-columns:1fr;gap:40px;padding-block:44px 56px}}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 16px}
+h1{
+  font-family:var(--font-display);font-weight:400;font-size:clamp(46px,8vw,92px);line-height:.95;
+  letter-spacing:.005em;margin:0 0 20px;text-wrap:balance;
+}
+h1 em{font-style:normal}  /* el acento se reserva para acciones y para la demo en vivo */
+.lede{font-size:18px;color:var(--ink-soft);max-width:46ch;margin:0 0 28px}
+.hero-actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap}

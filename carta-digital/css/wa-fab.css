@@ -1,0 +1,17 @@
+/* Botón flotante de WhatsApp: solo en mobile; js/wa-fab.js lo muestra pasada la portada y lo oculta en el cierre. */
+.wa-fab{display:none}
+@media (max-width:820px){
+  .wa-fab{
+    position:fixed;z-index:20;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--accent);color:var(--accent-ink);text-decoration:none;
+    font-family:var(--font-mono);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+    padding:14px 18px 14px 16px;border-radius:99px;
+    box-shadow:0 10px 24px -8px rgba(0,0,0,.45);
+    opacity:0;transform:translateY(12px);pointer-events:none;
+    transition:opacity .25s ease,transform .35s cubic-bezier(.23,1,.32,1);
+  }
+  .wa-fab.is-visible{opacity:1;transform:none;pointer-events:auto}
+  .wa-fab:active{transform:scale(.97)}
+  .wa-fab svg{width:22px;height:22px;flex:none}
+}

@@ -337,6 +337,7 @@ const translations = {
     'solucion.03.bajada1': 'Tu carta en el celular del cliente. Sin app, sin descarga. QR → listo.',
     'solucion.03.bajada2': 'Carta con fotos, categorías y precios',
     'solucion.03.eco': '<li>Actualizás precios al instante, sin reimprimir nada</li><li>QR para mesas, mostrador o Instagram</li><li>Marcás platos agotados con un toque</li>',
+    'solucion.03.btn': 'Ver propuesta →',
     'solucion.04.nombre': 'Panel de administración',
     'solucion.04.bajada': 'El centro de todo. Menú, reservas y agente se manejan desde un solo lugar — tu celular.',
     'solucion.04.eco': '<li>Cambiás un precio y se actualiza en la carta al instante</li><li>Turnos, reservas y consultas del día en una sola vista</li><li>Cada solución que sumás cae al mismo panel, sin apps nuevas</li><li>Métricas simples: qué se vende, cuándo, cuánto</li>',
@@ -453,6 +454,7 @@ const translations = {
     'solucion.03.bajada1': "Your menu on your customer's phone. No app, no download. QR → done.",
     'solucion.03.bajada2': 'Menu with photos, categories and prices',
     'solucion.03.eco': '<li>Update prices instantly, no reprinting</li><li>QR for tables, counter or Instagram</li><li>Mark dishes as sold out with a tap</li>',
+    'solucion.03.btn': 'View proposal →',
     'solucion.04.nombre': 'Admin panel',
     'solucion.04.bajada': 'The center of it all. Menu, bookings and agent, managed from one place — your phone.',
     'solucion.04.eco': "<li>Change a price and the menu updates instantly</li><li>Today's bookings, appointments and inquiries in one view</li><li>Every solution you add lands in the same panel, no new apps</li><li>Simple metrics: what sells, when, how much</li>",
@@ -500,7 +502,7 @@ function applyLang(lang) {
     });
 
     document.querySelectorAll('.solucion-demo-btn').forEach(btn => {
-      btn.setAttribute('data-after', translations[lang]['solucion.demo.btn']);
+      btn.setAttribute('data-after', translations[lang][btn.dataset.afterKey || 'solucion.demo.btn']);
     });
 
     langLabel.textContent = lang === 'es' ? 'EN' : 'ES';

@@ -1,0 +1,18 @@
+/* Sección: precios. */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+@media (max-width:760px){.plans{grid-template-columns:1fr}}
+.plan{border:1.5px solid var(--line);border-radius:2px;padding:26px 24px;display:flex;flex-direction:column;gap:14px}
+.plan.main{border-color:var(--ink);background:var(--raised)}
+.plan h3{font-family:var(--font-display);font-weight:400;font-size:34px;line-height:1;margin:0}
+.plan .price{font-family:var(--font-mono);font-weight:700;font-size:26px;font-variant-numeric:tabular-nums}
+.plan .price small{font-size:12px;font-weight:500;color:var(--ink-soft);letter-spacing:.06em}
+.plan ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:15px}
+.plan li{padding-left:18px;position:relative}
+.plan li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;background:var(--accent)}
+.plan .badge{align-self:flex-start;font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:var(--accent-ink);padding:3px 9px;border-radius:99px}
+.maint{margin-top:20px;border:1.5px dashed var(--line);border-radius:2px;padding:18px 22px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.maint b{font-family:var(--font-mono);font-size:20px;font-variant-numeric:tabular-nums}
+.fine{font-size:13.5px;color:var(--ink-soft);margin:16px 0 0;max-width:70ch}
+/* Plan recomendado: más presencia que el básico. */
+.plan.main{padding-block:32px;border-top:4px solid var(--accent)}
+.plan.main .price{font-size:36px}

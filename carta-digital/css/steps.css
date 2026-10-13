@@ -1,0 +1,9 @@
+/* Sección: pasos (es una secuencia real). */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+@media (max-width:760px){.steps{grid-template-columns:1fr}}
+.step{background:var(--raised);padding:22px 20px;border-radius:2px;counter-increment:s}
+.step::before{
+  content:counter(s);font-family:var(--font-display);font-size:44px;line-height:1;color:var(--accent);display:block;margin-bottom:6px;
+}
+.step b{display:block;margin-bottom:4px;font-size:17px}
+.step span{color:var(--ink-soft);font-size:15px}

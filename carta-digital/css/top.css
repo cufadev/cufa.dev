@@ -1,0 +1,8 @@
+/* Barra superior con logo. */
+.top{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding-block:22px;border-bottom:1px solid var(--line);
+}
+.logo{font-family:var(--font-display);font-size:26px;letter-spacing:.04em;text-decoration:none}
+.logo i{font-style:normal;color:var(--accent)}
+.top span{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}

@@ -1,0 +1,13 @@
+/* Cierre y pie de página. */
+.cta{margin-top:72px;background:var(--ink);color:var(--ground);padding:44px 32px;border-radius:2px}
+.cta h2{color:inherit;font-size:clamp(34px,6vw,60px)}
+.cta p{margin:0 0 24px;opacity:.88;max-width:52ch}
+.cta .btn{background:var(--accent);color:#14120F}
+.cta .num{margin:16px 0 0;font-family:var(--font-mono);font-size:14px;letter-spacing:.06em;opacity:.8;user-select:all}
+
+footer{
+  margin-top:40px;padding-top:18px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;
+  font-family:var(--font-mono);font-size:12px;color:var(--ink-soft);
+}
+footer a{text-decoration:none;border-bottom:1px solid var(--line)}

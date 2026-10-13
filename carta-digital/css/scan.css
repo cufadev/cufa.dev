@@ -1,0 +1,11 @@
+/* QR del hero: solo tiene sentido en pantallas grandes con mouse (en el celu ya estás mirando la página). */
+.scan{display:none}
+@media (min-width:821px) and (hover:hover) and (pointer:fine){
+  .scan{display:flex;align-items:center;gap:14px}
+  .scan img{
+    display:block;flex:none;width:88px;height:88px;padding:8px;
+    background:#fff;border:1.5px solid var(--ink);border-radius:2px;
+  }
+  .scan p{margin:0;font-size:14px;line-height:1.4;color:var(--ink-soft);max-width:22ch}
+  .scan b{display:block;color:var(--ink);font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
+}
