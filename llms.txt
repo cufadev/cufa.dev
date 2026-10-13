@@ -1,25 +1,27 @@
 # CUFA
 
-> Desarrollador full-stack y productor visual freelance con base en Buenos Aires, Argentina. Construye SaaS, soluciones digitales para negocios locales, automatización con IA y cubre producción fotográfica de producto/eventos.
+> Desarrollador web y de sistemas a medida freelance en Buenos Aires, Argentina. Hace webs, cartas digitales, reservas online, paneles de gestión y automatización con WhatsApp y Telegram para gastronomía, comercios y eventos. También ofrece fotografía de producto y eventos.
 
-CUFA (Facundo González) trabaja solo o con colaboradores en proyectos de software y producción visual. Stack principal: Node.js, TypeScript, React, Next.js, Python, Supabase. Industrias atendidas: gastronomía, eventos, estudios profesionales, startups. Opera un servidor propio para automatización (bots, agentes de IA) y ofrece servicios de fotografía de producto y eventos con equipo Nikon D810.
+CUFA (Facundo González) trabaja de punta a punta: diseño, programación y puesta en marcha, con trato directo. Stack principal: Node.js, TypeScript, React, Next.js, Python, Supabase. Industrias atendidas: gastronomía, comercios, eventos, estudios profesionales, startups. Opera un servidor propio para automatización (bots, agentes de IA) y ofrece fotografía de producto y eventos con equipo Nikon D810.
 
 ## Servicios
 
-- [Desarrollo Full-Stack](https://cufadev.xyz/#servicios): aplicaciones web, plataformas SaaS, paneles de gestión.
-- [Automatización con IA](https://cufadev.xyz/#servicios): agentes de WhatsApp y Telegram, bots de atención, scraping y generación de leads.
-- [Fotografía de producto y eventos](https://cufadev.xyz/#fotografia): cobertura con Nikon D810.
+- [Cartas digitales, reservas y paneles](https://cufadev.xyz/#casos): sistemas completos para restaurantes, bares y comercios.
+- [Soluciones listas con demos](https://cufadev.xyz/#soluciones): productos que ya funcionan y se pueden probar en vivo.
+- [Automatización con IA](https://cufadev.xyz/#casos): agentes de WhatsApp y Telegram, bots de atención, scraping y generación de leads.
+- [Fotografía de producto y eventos](https://cufadev.xyz/#galeria): cobertura con Nikon D810.
 
 ## Proyectos
 
+- [Proyectos](https://cufadev.xyz/proyectos.html): casos reales con demos en vivo.
 - [Dishub](https://getdishub.app): plataforma SaaS de reservas y turnos para gastronomía.
-- [Chebra Barber & Foodbar](https://cufadev.xyz/#proyectos): app de prode del Mundial 2026 + generador de stories.
 - [anotame.xyz](https://anotame.xyz): anotador de juegos de cartas argentinos (Truco, Chinchón, Generala, Escoba de 15).
 
 ## Contacto
 
 - [Portfolio](https://cufadev.xyz)
-- WhatsApp / contacto directo vía formulario en el sitio.
+- [Galería](https://cufadev.xyz/galeria.html)
+- WhatsApp: https://wa.me/5491168980563
 
 ## Optional
 
