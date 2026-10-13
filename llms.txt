@@ -6,19 +6,19 @@ CUFA (Facundo González) trabaja solo o con colaboradores en proyectos de softwa
 
 ## Servicios
 
-- [Desarrollo Full-Stack](https://cufagon.xyz/#servicios): aplicaciones web, plataformas SaaS, paneles de gestión.
-- [Automatización con IA](https://cufagon.xyz/#servicios): agentes de WhatsApp y Telegram, bots de atención, scraping y generación de leads.
-- [Fotografía de producto y eventos](https://cufagon.xyz/#fotografia): cobertura con Nikon D810.
+- [Desarrollo Full-Stack](https://cufadev.xyz/#servicios): aplicaciones web, plataformas SaaS, paneles de gestión.
+- [Automatización con IA](https://cufadev.xyz/#servicios): agentes de WhatsApp y Telegram, bots de atención, scraping y generación de leads.
+- [Fotografía de producto y eventos](https://cufadev.xyz/#fotografia): cobertura con Nikon D810.
 
 ## Proyectos
 
 - [Dishub](https://getdishub.app): plataforma SaaS de reservas y turnos para gastronomía.
-- [Chebra Barber & Foodbar](https://cufagon.xyz/#proyectos): app de prode del Mundial 2026 + generador de stories.
+- [Chebra Barber & Foodbar](https://cufadev.xyz/#proyectos): app de prode del Mundial 2026 + generador de stories.
 - [anotame.xyz](https://anotame.xyz): anotador de juegos de cartas argentinos (Truco, Chinchón, Generala, Escoba de 15).
 
 ## Contacto
 
-- [Portfolio](https://cufagon.xyz)
+- [Portfolio](https://cufadev.xyz)
 - WhatsApp / contacto directo vía formulario en el sitio.
 
 ## Optional
