@@ -1872,6 +1872,12 @@ body::before {
 .reveal-grid.visible > *:nth-child(4) { transition-delay: 0.24s; }
 .reveal-grid.visible > *:nth-child(5) { transition-delay: 0.32s; }
 .reveal-grid.visible > *:nth-child(6) { transition-delay: 0.40s; }
+.reveal-grid.visible > *:nth-child(7) { transition-delay: 0.48s; }
+.reveal-grid.visible > *:nth-child(8) { transition-delay: 0.56s; }
+.reveal-grid.visible > *:nth-child(9) { transition-delay: 0.64s; }
+.reveal-grid.visible > *:nth-child(10) { transition-delay: 0.72s; }
+.reveal-grid.visible > *:nth-child(11) { transition-delay: 0.80s; }
+.reveal-grid.visible > *:nth-child(12) { transition-delay: 0.88s; }
 .reveal-grid.visible > * { opacity: 1; transform: none; }
 
 /* ── Hover magnetico en botones ── */
