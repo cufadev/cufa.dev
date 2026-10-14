@@ -30,11 +30,17 @@ function tickLoader() {
   setTimeout(tickLoader, delay);
 }
 
-const MIN_LOADER_MS = 2500;
+// Primera visita de la sesión: loader corto (el DOM ya está listo, no se
+// espera a 'load'). Visitas siguientes en la misma sesión: sin loader.
+let loaderSeen = false;
+try { loaderSeen = sessionStorage.getItem('cufa_loader') === '1'; } catch (e) {}
+try { sessionStorage.setItem('cufa_loader', '1'); } catch (e) {}
+
+const MIN_LOADER_MS = loaderSeen ? 0 : 800;
 const loaderStart = Date.now();
 
-// Tope: si 'load' se demora (iframes, videos), el loader se va igual.
-const MAX_LOADER_MS = 6000;
+// Tope: si algo se demora, el loader se va igual.
+const MAX_LOADER_MS = 3000;
 let loaderDone = false;
 
 function finishLoader() {
@@ -48,11 +54,15 @@ function finishLoader() {
     setTimeout(() => {
       loader.classList.add('hidden');
       document.querySelector('.hero-content').classList.add('hero-loaded');
-    }, 400);
+    }, loaderSeen ? 0 : 250);
   }, wait);
 }
 
-window.addEventListener('load', finishLoader);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', finishLoader);
+} else {
+  finishLoader();
+}
 setTimeout(finishLoader, MAX_LOADER_MS);
 
 tickLoader();
