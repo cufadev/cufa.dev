@@ -14,8 +14,8 @@ html { scrollbar-color: var(--orange) var(--bg); scrollbar-width: thin; }
   --orange: #ff4d00;
   --orange-dim: #cc3d00;
   --text: #f0ede8;
-  --text-muted: #888880;
-  --text-dim: #444440;
+  --text-muted: #a8a8a0;
+  --text-dim: #7c7c75;
   --border: rgba(255,255,255,0.07);
   --mono: 'Space Mono', monospace;
   --display: 'Bebas Neue', sans-serif;
@@ -86,7 +86,7 @@ nav {
 
 .nav-links a {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -100,7 +100,7 @@ nav {
 
 .nav-cta {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--bg);
@@ -127,7 +127,7 @@ nav {
   border: 1px solid rgba(240,237,232,0.25);
   color: var(--text-dim);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   padding: 5px 10px;
@@ -196,7 +196,7 @@ nav {
 
 .hero-eyebrow {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--orange);
@@ -253,13 +253,13 @@ nav {
 
 .hero-tagline {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
   line-height: 1.8;
   margin: 2rem 0;
-  max-width: 320px;
+  max-width: 440px;
   border-left: 1px solid var(--border);
   padding-left: 1rem;
 }
@@ -281,7 +281,7 @@ nav {
 }
 
 .hero-meta-item .label {
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--text-dim);
@@ -314,7 +314,7 @@ nav {
 
 .btn-primary {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--bg);
@@ -330,7 +330,7 @@ nav {
 
 .btn-ghost {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -352,7 +352,7 @@ nav {
   z-index: 50;
   transition: opacity 0.3s ease;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-dim);
@@ -374,7 +374,7 @@ section { padding: 6rem 3rem; }
 
 .section-label {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--orange);
@@ -445,7 +445,7 @@ section { padding: 6rem 3rem; }
 
 .propuesta-num {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   color: var(--orange);
   min-width: 24px;
   padding-top: 3px;
@@ -468,7 +468,7 @@ section { padding: 6rem 3rem; }
   display: inline-block;
   margin-top: 0.6rem;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--orange-dim);
@@ -546,7 +546,7 @@ section { padding: 6rem 3rem; }
 .caso-bloque-label {
   display: block;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--orange);
@@ -558,7 +558,7 @@ section { padding: 6rem 3rem; }
   grid-template-columns: 1fr auto 1fr;
   gap: 0.3rem 0.75rem;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.04em;
 }
 
@@ -600,8 +600,7 @@ section { padding: 6rem 3rem; }
   width: 100%;
   height: auto;
   display: block;
-  filter: grayscale(100%);
-  transition: transform 0.6s ease, filter 0.4s ease, opacity 0.5s ease;
+  transition: transform 0.6s ease, opacity 0.5s ease;
 }
 
 .caso-thumb iframe {
@@ -610,18 +609,11 @@ section { padding: 6rem 3rem; }
   display: block;
   border: 0;
   pointer-events: none;
-  filter: grayscale(100%);
-  transition: filter 0.4s ease;
 }
 
 .caso-card:hover .caso-thumb img,
 .caso-card:hover .caso-thumb video {
   transform: scale(1.04);
-  filter: grayscale(0%);
-}
-
-.caso-card:hover .caso-thumb iframe {
-  filter: grayscale(0%);
 }
 
 .img--shift-up {
@@ -647,7 +639,7 @@ section { padding: 6rem 3rem; }
 
 .thumb-loading-label {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-dim);
@@ -680,7 +672,7 @@ section { padding: 6rem 3rem; }
   top: 1rem;
   left: 1rem;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--bg);
@@ -695,7 +687,7 @@ section { padding: 6rem 3rem; }
 
 .caso-num {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   color: var(--text-dim);
   margin-bottom: 0.5rem;
@@ -718,7 +710,7 @@ section { padding: 6rem 3rem; }
 
 .caso-ecosistema li {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.04em;
   color: var(--text-muted);
   padding-left: 1.2rem;
@@ -747,7 +739,7 @@ section { padding: 6rem 3rem; }
   padding: 0.75rem 0;
   border-top: 1px solid var(--border);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--text-dim);
@@ -771,7 +763,7 @@ section { padding: 6rem 3rem; }
 
 .tag {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-dim);
@@ -794,7 +786,7 @@ section { padding: 6rem 3rem; }
   align-items: center;
   justify-content: center;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.1em;
   color: var(--text-dim);
 }
@@ -942,7 +934,7 @@ section { padding: 6rem 3rem; }
 
 .solucion-casos-label {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-dim);
@@ -963,7 +955,7 @@ section { padding: 6rem 3rem; }
 
 .solucion-caso-rubro {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--orange);
@@ -1093,7 +1085,7 @@ section { padding: 6rem 3rem; }
 
 .solucion-badge {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--orange);
@@ -1110,7 +1102,7 @@ section { padding: 6rem 3rem; }
 
 .solucion-num {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   color: var(--text-dim);
 }
@@ -1158,7 +1150,7 @@ section { padding: 6rem 3rem; }
 
 .solucion-status {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--orange);
@@ -1266,7 +1258,7 @@ section { padding: 6rem 3rem; }
   position: relative;
   z-index: 1;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   color: rgba(255,255,255,0);
   transition: color 0.3s;
 }
@@ -1299,7 +1291,7 @@ section { padding: 6rem 3rem; }
 
 .galeria-caption-location {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.6);
@@ -1332,7 +1324,7 @@ section { padding: 6rem 3rem; }
   background: var(--orange);
   color: var(--bg);
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   display: flex;
@@ -1414,7 +1406,7 @@ section { padding: 6rem 3rem; }
 
 .galeria-cta-note {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-dim);
@@ -1464,7 +1456,7 @@ section { padding: 6rem 3rem; }
 
 .stack-name {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -1501,7 +1493,7 @@ section { padding: 6rem 3rem; }
 
 .contacto-meta {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.1em;
   color: var(--text-dim);
   line-height: 2;
@@ -1535,7 +1527,7 @@ section { padding: 6rem 3rem; }
 
 .contacto-link-label {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--orange);
@@ -1570,7 +1562,7 @@ footer {
 
 .footer-copy {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.1em;
   color: var(--text-dim);
 }
@@ -1583,7 +1575,7 @@ footer {
 
 .footer-links a {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--text-dim);
@@ -1745,7 +1737,7 @@ footer {
 
 .loader-pct {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   color: var(--text-dim);
 }
@@ -1911,4 +1903,60 @@ body::before {
     grid-row: auto !important;
   }
   .caso-thumb { max-height: 240px; }
+}
+
+/* Textos mono más grandes: que no queden palabras sueltas en celular */
+@media (max-width: 600px) {
+  .hero-eyebrow { letter-spacing: 0.1em; gap: 0.5rem; }
+  .hero-eyebrow::before { width: 24px; }
+  .hero-tagline { max-width: none; font-size: 10.5px; letter-spacing: 0.02em; }
+}
+
+/* Soluciones: "ideal para" y cómo trabajo */
+.solucion-ideal {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0;
+}
+.solucion-ideal-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-right: 0.4rem;
+}
+.como-trabajo { padding: 4rem 0 1rem; }
+.como-head { margin-bottom: 2rem; }
+.como-titulo {
+  font-family: var(--display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  margin: 0.5rem 0 0;
+}
+.como-titulo span { color: var(--orange); }
+.como-pasos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+.como-paso {
+  background: var(--surface);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.como-num { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--orange); }
+.como-paso h4 { font-family: var(--body); font-size: 1.25rem; font-weight: 500; margin: 0; color: var(--text); }
+.como-paso p { font-size: 14px; line-height: 1.6; color: var(--text-muted); margin: 0; }
+@media (max-width: 900px) {
+  .como-pasos { grid-template-columns: 1fr; }
 }
