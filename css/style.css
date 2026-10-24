@@ -1960,3 +1960,10 @@ body::before {
 @media (max-width: 900px) {
   .como-pasos { grid-template-columns: 1fr; }
 }
+
+/* Proyectos propios */
+.propio-card { gap: 1rem; }
+.propio-img { background: var(--surface2); border: 1px solid var(--border); overflow: hidden; display: grid; place-items: center; aspect-ratio: 16 / 10; }
+.propio-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.propio-img--sq img { width: auto; max-width: 100%; object-fit: contain; }
+.propio-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: auto; padding-top: 0.5rem; }
