@@ -1525,6 +1525,11 @@ section { padding: 6rem 3rem; }
   background: rgba(255,77,0,0.05);
 }
 
+.contacto-link .gh-ico { flex: none; margin-right: 1rem; color: var(--text-dim); transition: color 0.2s; }
+.contacto-link:hover .gh-ico { color: var(--orange); }
+.contacto-link > div { margin-right: auto; }
+.caso-link .gh-ico { margin-right: 0.4rem; vertical-align: -2px; }
+
 .contacto-link-label {
   font-family: var(--mono);
   font-size: 11px;
