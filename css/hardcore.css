@@ -40,16 +40,41 @@
 .hc-tag--top { top: 6rem; right: 4.5rem; }
 .hc-tag--coords { bottom: 4rem; left: 4.5rem; color: var(--text-muted); }
 
-/* ── Regla vertical ── */
+/* ── Regla vertical: fija a la izquierda, hace de indicador de progreso de scroll ── */
 .hc-ruler {
-  position: absolute;
+  position: fixed;
   top: 9rem;
   bottom: 7rem;
-  right: 1.9rem;
+  left: 0.6rem;
+  z-index: 60;
   width: 10px;
+  pointer-events: none;
   background:
-    repeating-linear-gradient(to bottom, var(--text-dim) 0 1px, transparent 1px 8px) right / 5px 100% no-repeat,
-    repeating-linear-gradient(to bottom, var(--orange) 0 1px, transparent 1px 40px) right / 10px 100% no-repeat;
+    repeating-linear-gradient(to bottom, var(--text-dim) 0 1px, transparent 1px 8px) left / 5px 100% no-repeat,
+    repeating-linear-gradient(to bottom, var(--orange) 0 1px, transparent 1px 40px) left / 10px 100% no-repeat;
+}
+/* tramo recorrido: se enciende en naranja */
+.hc-ruler::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: calc(var(--progress, 0) * 100%);
+  background: var(--orange);
+  opacity: 0.85;
+}
+/* marcador que baja por la regla */
+.hc-ruler::after {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: calc(var(--progress, 0) * 100%);
+  width: 12px;
+  height: 2px;
+  margin-top: -1px;
+  background: var(--orange);
+  box-shadow: 0 0 8px rgba(255,77,0,0.9);
 }
 
 /* ── Banda de peligro con corte diagonal ── */
@@ -60,6 +85,8 @@
   width: 58%;
   height: 22px;
   background: repeating-linear-gradient(-45deg, var(--orange) 0 9px, transparent 9px 18px);
+  /* tile cuadrado de un período exacto (18px × √2): sin costura al repetir ni salto al reiniciar */
+  background-size: 25.4558px 25.4558px;
   clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%);
   animation: hc-march 1.6s linear infinite;
   opacity: 0.9;
@@ -80,7 +107,7 @@
   color: var(--orange);
 }
 
-@keyframes hc-march { to { background-position: 25.46px 0; } }
+@keyframes hc-march { to { background-position: 25.4558px 0; } }
 
 /* ══════════════════════════════════════════════
    VESTIGIOS — detalles sueltos en el resto del sitio
@@ -138,9 +165,8 @@ body { counter-reset: hc-sec; }
 }
 .stack-item:hover::before { color: var(--orange); }
 
-/* Contacto: esquinas de registro que cierran el marco del hero */
+/* Contacto: esquina de registro inferior (la superior se sacó a pedido) */
 .contacto { position: relative; }
-.contacto::before,
 .contacto::after {
   content: '';
   position: absolute;
@@ -149,7 +175,6 @@ body { counter-reset: hc-sec; }
   border: 0 solid var(--orange);
   pointer-events: none;
 }
-.contacto::before { top: 1.5rem; left: 1.5rem; border-top-width: 1.5px; border-left-width: 1.5px; }
 .contacto::after { bottom: 1.5rem; right: 1.5rem; border-bottom-width: 1.5px; border-right-width: 1.5px; }
 
 /* Footer: tramo de banda de peligro sobre el borde */

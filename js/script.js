@@ -601,9 +601,7 @@ const nav = document.querySelector('nav');
 const heroScrollEl = document.querySelector('.hero-scroll');
 const heroSection = document.querySelector('.hero');
 window.addEventListener('scroll', () => {
-  nav.style.background = window.scrollY > 60
-    ? 'rgba(10,10,10,0.97)'
-    : 'linear-gradient(to bottom, rgba(10,10,10,0.95) 0%, transparent 100%)';
+  nav.classList.toggle('scrolled', window.scrollY > 60);
   if (heroScrollEl && heroSection) {
     const heroBottom = heroSection.getBoundingClientRect().bottom;
     heroScrollEl.style.opacity = heroBottom < 100 ? '0' : '1';
@@ -680,3 +678,44 @@ document.querySelectorAll('.caso-card').forEach(card => {
     video.currentTime = 0;
   });
 });
+
+/* ── Stack: spotlight que sigue al mouse ── */
+const stackGrid = document.querySelector('.stack-grid');
+if (stackGrid && window.matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches) {
+  stackGrid.addEventListener('mousemove', e => {
+    const g = stackGrid.getBoundingClientRect();
+    stackGrid.style.setProperty('--gx', `${e.clientX - g.left}px`);
+    stackGrid.style.setProperty('--gy', `${e.clientY - g.top}px`);
+  });
+  stackGrid.addEventListener('mouseleave', () => {
+    stackGrid.style.setProperty('--gx', '-999px');
+    stackGrid.style.setProperty('--gy', '-999px');
+  });
+}
+
+/* ── Títulos de sección: cortina al entrar en pantalla ── */
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const titulos = document.querySelectorAll('.casos-titulo, .soluciones-titulo, .galeria-titulo, .contacto-titulo, .como-titulo');
+  /* se observa el contenedor: el título recortado por clip-path no cuenta como visible */
+  const tio = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.querySelector('.titulo-reveal').classList.add('in'); tio.unobserve(e.target); }
+    });
+  }, { threshold: 0.3 });
+  titulos.forEach(t => { t.classList.add('titulo-reveal'); tio.observe(t.parentElement); });
+}
+
+/* ── Barra de progreso de scroll ── */
+const progresoNav = document.querySelector('.hc-ruler');
+if (progresoNav) {
+  let progresoTick = false;
+  const actualizarProgreso = () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progresoNav.style.setProperty('--progress', max > 0 ? Math.min(1, window.scrollY / max).toFixed(4) : 0);
+    progresoTick = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!progresoTick) { progresoTick = true; requestAnimationFrame(actualizarProgreso); }
+  }, { passive: true });
+  actualizarProgreso();
+}

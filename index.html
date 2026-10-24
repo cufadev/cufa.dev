@@ -168,8 +168,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   </noscript>
-  <link rel="stylesheet" href="css/style.css?v=20261018e">
-  <link rel="stylesheet" href="css/hardcore.css">
+  <link rel="stylesheet" href="css/style.css?v=20261024k">
+  <link rel="stylesheet" href="css/hardcore.css?v=20261024d">
   <meta name="google-site-verification" content="Dm642CIudVKzp27GO3zfsTnZa1nJ9CFGrA1RHx7oJgs" />
   <meta name="google-site-verification" content="wfLaVKQg5KlNpWwYXEnU0Ikc5EjnYVMgp6X2lhKYCbA" />
 </head>
@@ -191,6 +191,9 @@
   <div class="cursor-ring" id="cursorRing"></div>
 
   <!-- NAV -->
+  <!-- Regla lateral: marca el progreso de scroll de la página -->
+  <div class="hc-ruler" aria-hidden="true"></div>
+
   <nav>
     <a href="#" class="nav-logo" data-text="CUFA.">CUFA.</a>
     <ul class="nav-links">
@@ -233,7 +236,6 @@
 
       <span class="hc-tag hc-tag--top"><b>[CF—01]</b> // SYS.ONLINE</span>
       <span class="hc-tag hc-tag--coords">34°36′S <b>✕</b> 58°22′W</span>
-      <div class="hc-ruler"></div>
       <div class="hc-hazard"></div>
       <span class="hc-hazard-label">// BUILD.2026</span>
     </div>
@@ -835,7 +837,7 @@
         <div class="caso-tags"><span class="tag">Python</span><span class="tag">PySide6</span><span class="tag">miniaudio</span><span class="tag">GPL-3</span></div>
         <div class="propio-links">
           <a href="https://cufadev.github.io/simpleplay/" class="caso-link" target="_blank" rel="noopener"><span data-i18n="propios.link.sitio">Ver el sitio</span> <span class="caso-link-arrow">↗</span></a>
-          <a href="https://github.com/cufadev/simpleplay" class="caso-link" target="_blank" rel="noopener"><svg class="gh-ico" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg><span data-i18n="propios.link.codigo">Código</span> <span class="caso-link-arrow">↗</span></a>
+          <a href="https://github.com/cufadev/simpleplay" class="caso-link" target="_blank" rel="noopener"><span data-i18n="propios.link.codigo">Código</span> <span class="caso-link-arrow">↗</span></a>
         </div>
       </article>
 
@@ -847,7 +849,7 @@
         <div class="caso-tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">SMTP</span><span class="tag">GPL-3</span></div>
         <div class="propio-links">
           <a href="https://cufadev.github.io/debuglist.io/" class="caso-link" target="_blank" rel="noopener"><span data-i18n="propios.link.sitio">Ver el sitio</span> <span class="caso-link-arrow">↗</span></a>
-          <a href="https://github.com/cufadev/debuglist.io" class="caso-link" target="_blank" rel="noopener"><svg class="gh-ico" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg><span data-i18n="propios.link.codigo">Código</span> <span class="caso-link-arrow">↗</span></a>
+          <a href="https://github.com/cufadev/debuglist.io" class="caso-link" target="_blank" rel="noopener"><span data-i18n="propios.link.codigo">Código</span> <span class="caso-link-arrow">↗</span></a>
         </div>
       </article>
 
@@ -1035,7 +1037,6 @@
         <span class="arrow">↗</span>
       </a>
       <a href="https://github.com/cufadev" class="contacto-link" target="_blank" rel="noopener noreferrer">
-        <svg class="gh-ico" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg>
         <div>
           <div class="contacto-link-label">GitHub</div>
           <div>@cufadev</div>
@@ -1059,7 +1060,7 @@
     </ul>
   </footer>
 
-  <script src="js/script.js?v=20261018f"></script>
+  <script src="js/script.js?v=20261024g"></script>
   <script>
     (function () {
       const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
