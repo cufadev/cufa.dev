@@ -169,7 +169,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   </noscript>
-  <link rel="stylesheet" href="css/style.css?v=20261024k">
+  <link rel="stylesheet" href="css/style.css?v=20261026f">
   <link rel="stylesheet" href="css/hardcore.css?v=20261024d">
   <meta name="google-site-verification" content="Dm642CIudVKzp27GO3zfsTnZa1nJ9CFGrA1RHx7oJgs" />
   <meta name="google-site-verification" content="wfLaVKQg5KlNpWwYXEnU0Ikc5EjnYVMgp6X2lhKYCbA" />
@@ -814,7 +814,7 @@
     </div>
   </section>
 
-  <!-- PROYECTOS PROPIOS — OCULTO hasta nuevo aviso (no publicar)
+  <!-- PROYECTOS PROPIOS: por ahora solo tarab player (Bug/mail y la tarjeta de uso quedan afuera) -->
   <section class="soluciones propios" id="propios">
     <div class="soluciones-header reveal">
       <div>
@@ -828,35 +828,27 @@
       <p class="soluciones-desc" data-i18n="propios.desc">Además de los proyectos para clientes, construyo y publico mis propias herramientas. Están abiertas: se pueden leer, probar y usar.</p>
     </div>
 
-    <div class="soluciones-grid reveal-grid">
+    <div class="soluciones-grid soluciones-grid--uno reveal-grid">
 
-      <article class="solucion-card propio-card">
-        <div class="propio-img propio-img--sq"><img src="img/propios/simpleplay.webp" width="372" height="372" loading="lazy" alt="simpleplay: tarjeta del reproductor con la tapa del disco"></div>
-        <div class="solucion-card-top"><span class="solucion-num">P·01</span><span class="solucion-badge" data-i18n="propios.sp.badge">Linux · Windows</span></div>
-        <h3 class="solucion-nombre">simpleplay</h3>
-        <p class="solucion-bajada" data-i18n="propios.sp.bajada">Un reproductor de mp3 y FLAC simple, sin cuentas ni publicidad. Motor de audio propio, espectro que reacciona al sonido real, lista con búsqueda y orden por arrastre.</p>
-        <div class="caso-tags"><span class="tag">Python</span><span class="tag">PySide6</span><span class="tag">miniaudio</span><span class="tag">GPL-3</span></div>
-        <div class="propio-links">
-          <a href="https://cufadev.github.io/simpleplay/" class="caso-link" target="_blank" rel="noopener"><span data-i18n="propios.link.sitio">Ver el sitio</span> <span class="caso-link-arrow">↗</span></a>
-          <a href="https://github.com/cufadev/simpleplay" class="caso-link" target="_blank" rel="noopener"><span data-i18n="propios.link.codigo">Código</span> <span class="caso-link-arrow">↗</span></a>
+      <article class="tp-fusion">
+        <div class="tp-caja" role="img" aria-label="tarab player: tarjetas del reproductor con las portadas de los discos, desplazándose">
+          <div class="tp-fondo" aria-hidden="true"><div class="tp-rot"><div class="tp-fila"></div><div class="tp-fila"></div><div class="tp-fila"></div><div class="tp-fila"></div><div class="tp-fila"></div></div></div>
+          <div class="tp-vela" aria-hidden="true"></div>
         </div>
-      </article>
-
-      <article class="solucion-card propio-card">
-        <div class="propio-img"><img src="img/propios/bugmail.webp" width="900" height="580" loading="lazy" alt="Bug/mail: interfaz web con los resultados de una lista verificada"></div>
-        <div class="solucion-card-top"><span class="solucion-num">P·02</span><span class="solucion-badge" data-i18n="propios.bm.badge">Web · CLI</span></div>
-        <h3 class="solucion-nombre">Bug/mail</h3>
-        <p class="solucion-bajada" data-i18n="propios.bm.bajada">Limpia una lista de correo antes de enviarle. Revisa cada dirección por capas (sintaxis, typos, DNS, handshake SMTP, catch-all) sin mandar un solo mensaje. 51 tests.</p>
-        <div class="caso-tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">SMTP</span><span class="tag">GPL-3</span></div>
-        <div class="propio-links">
-          <a href="https://cufadev.github.io/debuglist.io/" class="caso-link" target="_blank" rel="noopener"><span data-i18n="propios.link.sitio">Ver el sitio</span> <span class="caso-link-arrow">↗</span></a>
-          <a href="https://github.com/cufadev/debuglist.io" class="caso-link" target="_blank" rel="noopener"><span data-i18n="propios.link.codigo">Código</span> <span class="caso-link-arrow">↗</span></a>
+        <div class="tp-texto">
+          <div class="solucion-card-top"><span class="solucion-num">P·01</span><span class="solucion-badge" data-i18n="propios.sp.badge">Linux · Windows · Mac</span></div>
+          <h3 class="tp-nombre">tarab player</h3>
+          <p class="solucion-bajada" data-i18n="propios.sp.bajada">Un reproductor de música simple: gratis, sin registro y sin internet. Motor de audio propio, espectro que reacciona al sonido real, lista con búsqueda y orden por arrastre. Antes se llamaba simpleplay.</p>
+          <div class="caso-tags"><span class="tag">Python</span><span class="tag">PySide6</span><span class="tag">miniaudio</span><span class="tag">GPL-3</span></div>
+          <div class="propio-links">
+            <a href="https://cufadev.github.io/simpleplay/" class="caso-link" target="_blank" rel="noopener"><span data-i18n="propios.link.sitio">Ver el sitio</span> <span class="caso-link-arrow">↗</span></a>
+            <a href="https://github.com/cufadev/simpleplay" class="caso-link" target="_blank" rel="noopener"><span data-i18n="propios.link.codigo">Código</span> <span class="caso-link-arrow">↗</span></a>
+          </div>
         </div>
       </article>
 
     </div>
   </section>
-  -->
 
   <!-- GALERÍA -->
   <section class="galeria-section" id="galeria">
@@ -1061,7 +1053,7 @@
     </ul>
   </footer>
 
-  <script src="js/script.js?v=20261024g"></script>
+  <script src="js/script.js?v=20261026c"></script>
   <script>
     (function () {
       const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];

@@ -331,8 +331,8 @@ const translations = {
     'propios.label': 'Proyectos propios',
     'propios.titulo': 'Lo que armo<br><span>por gusto.</span><small class="titulo-sub">Código abierto y herramientas propias</small>',
     'propios.desc': 'Además de los proyectos para clientes, construyo y publico mis propias herramientas. Están abiertas: se pueden leer, probar y usar.',
-    'propios.sp.badge': 'Linux · Windows',
-    'propios.sp.bajada': 'Un reproductor de mp3 y FLAC simple, sin cuentas ni publicidad. Motor de audio propio, espectro que reacciona al sonido real, lista con búsqueda y orden por arrastre.',
+    'propios.sp.badge': 'Linux · Windows · Mac',
+    'propios.sp.bajada': 'Un reproductor de música simple: gratis, sin registro y sin internet. Motor de audio propio, espectro que reacciona al sonido real, lista con búsqueda y orden por arrastre. Antes se llamaba simpleplay.',
     'propios.bm.badge': 'Web · CLI',
     'propios.bm.bajada': 'Limpia una lista de correo antes de enviarle. Revisa cada dirección por capas (sintaxis, typos, DNS, handshake SMTP, catch-all) sin mandar un solo mensaje. 51 tests.',
     'propios.link.sitio': 'Ver el sitio',
@@ -482,8 +482,8 @@ const translations = {
     'propios.label': 'Own projects',
     'propios.titulo': 'What I build<br><span>for fun.</span><small class="titulo-sub">Open source and my own tools</small>',
     'propios.desc': 'Besides client work, I build and publish my own tools. They are open: you can read, try and use them.',
-    'propios.sp.badge': 'Linux · Windows',
-    'propios.sp.bajada': 'A simple mp3 and FLAC player with no accounts and no ads. Own audio engine, a spectrum that reacts to the real sound, and a playlist with search and drag-to-sort.',
+    'propios.sp.badge': 'Linux · Windows · Mac',
+    'propios.sp.bajada': 'A simple music player: free, no sign-up and no internet needed. Own audio engine, a spectrum that reacts to the real sound, and a playlist with search and drag-to-sort. It used to be called simpleplay.',
     'propios.bm.badge': 'Web · CLI',
     'propios.bm.bajada': 'Cleans an e-mail list before you send to it. Checks each address in layers (syntax, typos, DNS, SMTP handshake, catch-all) without sending a single message. 51 tests.',
     'propios.link.sitio': 'View the site',
@@ -719,3 +719,32 @@ if (progresoNav) {
   }, { passive: true });
   actualizarProgreso();
 }
+
+// tarab player (Proyectos propios): las portadas se arman recién cuando el banner está cerca y corren solo mientras se ve
+(() => {
+  const caja = document.querySelector('.tp-caja');
+  if (!caja || !('IntersectionObserver' in window)) return;
+  const nums = Array.from({ length: 16 }, (_, i) => String(i + 1).padStart(2, '0'));
+  for (let i = nums.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [nums[i], nums[j]] = [nums[j], nums[i]]; }
+  let armado = false;
+  const armar = () => {
+    armado = true;
+    caja.querySelectorAll('.tp-fila').forEach((fila, r) => {
+      const elegidas = Array.from({ length: 12 }, (_, k) => nums[(k + 5 * r) % 16]);  // cada fila arranca 5 lugares más allá: no se repite ninguna cerca
+      for (let k = 0; k < 2; k++) {                                                    // dos juegos iguales para el bucle
+        const juego = document.createElement('div');
+        juego.className = 'tp-juego';
+        elegidas.forEach((n) => {
+          const im = new Image(176, 176);
+          im.alt = ''; im.decoding = 'async'; im.src = 'img/propios/portadas/' + n + '.webp';
+          juego.appendChild(im);
+        });
+        fila.appendChild(juego);
+      }
+    });
+  };
+  new IntersectionObserver((e) => {
+    if (e[0].isIntersecting && !armado) armar();
+    caja.classList.toggle('viva', e[0].isIntersecting);
+  }, { rootMargin: '300px 0px' }).observe(caja);
+})();
