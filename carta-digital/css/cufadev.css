@@ -255,3 +255,9 @@ section h2 span,.cta h2 span,h1 em{color:var(--orange)}
 /* el cursor propio aparece recién cuando el mouse se mueve (evita el arco en la esquina al cargar) */
 .cursor,.cursor-ring{opacity:0;transition:opacity .2s}
 .has-mouse .cursor,.has-mouse .cursor-ring{opacity:1}
+
+/* ── Firma CUFA.DEV: blanca con punto naranja ── */
+nav .nav-logo{color:var(--orange);font-size:2rem}
+nav .nav-logo i,.sig i{font-style:normal;color:var(--orange)}
+.nav-tag{font-family:var(--mono,'Space Mono',monospace);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}
+.sig{font-family:var(--display);font-size:1.4rem;letter-spacing:.05em;color:var(--orange)}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>Carta digital para restaurantes y bares — CUFA</title>
+  <title>Carta digital para restaurantes, bares y emprendimientos gastronómicos — CUFA</title>
   <meta name="description" content="Tu carta en el celu de tus clientes: se abre con un QR, lleva tu marca y la cambiás vos desde una planilla. Sin app y sin PDF.">
   <meta name="theme-color" content="#0a0a0a">
   <link rel="icon" href="/carta-digital/assets/img/favicon.svg" type="image/svg+xml">
@@ -11,7 +11,7 @@
   <!-- Vista previa al compartir (WhatsApp, etc.): og:url y og:image deben ser URLs absolutas del dominio publicado. -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
-  <meta property="og:title" content="Carta digital para tu local · CUFA">
+  <meta property="og:title" content="Carta digital para tu emprendimiento gastronómico · CUFA">
   <meta property="og:description" content="Tu carta en el celu de tus clientes. La cambiás vos, en un minuto. Se abre con un QR y se actualiza desde una planilla.">
   <link rel="canonical" href="https://cufadev.xyz/carta-digital/">
   <meta property="og:url" content="https://cufadev.xyz/carta-digital/">
@@ -44,7 +44,7 @@
   <link rel="stylesheet" href="/carta-digital/css/cufadev.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
-    {"@type":"Service","@id":"https://cufadev.xyz/carta-digital/#service","name":"Carta digital para restaurantes y bares","serviceType":"Carta digital con QR actualizable desde una planilla","description":"Carta digital que se abre con un QR, lleva la marca del local y se actualiza desde una planilla, sin app ni PDF.","provider":{"@id":"https://cufadev.xyz/#person"},"areaServed":{"@type":"AdministrativeArea","name":"Buenos Aires, Argentina"},"url":"https://cufadev.xyz/carta-digital/"},
+    {"@type":"Service","@id":"https://cufadev.xyz/carta-digital/#service","name":"Carta digital para restaurantes, bares y emprendimientos gastronómicos","serviceType":"Carta digital con QR actualizable desde una planilla","description":"Carta digital que se abre con un QR, lleva la marca del local y se actualiza desde una planilla, sin app ni PDF.","provider":{"@id":"https://cufadev.xyz/#person"},"areaServed":{"@type":"AdministrativeArea","name":"Buenos Aires, Argentina"},"url":"https://cufadev.xyz/carta-digital/"},
     {"@type":"BreadcrumbList","itemListElement":[
       {"@type":"ListItem","position":1,"name":"CUFA","item":"https://cufadev.xyz/"},
       {"@type":"ListItem","position":2,"name":"Carta digital","item":"https://cufadev.xyz/carta-digital/"}]}
@@ -57,16 +57,8 @@
   <div class="cursor-ring" id="cursorRing"></div>
 
   <nav>
-    <a href="/" class="nav-logo" data-text="CUFA.">CUFA.</a>
-    <ul class="nav-links">
-      <li><a href="/#casos">Casos</a></li>
-      <li><a href="/#soluciones">Soluciones</a></li>
-      <li><a href="/#galeria">Galería</a></li>
-      <li><a href="/#stack">Stack</a></li>
-    </ul>
-    <div class="nav-end">
-      <a href="#contacto" class="nav-cta">Hablemos →</a>
-    </div>
+    <a href="/" class="nav-logo" data-text="CUFA." aria-label="CUFA.">CUFA.</a>
+    <span class="nav-tag">Cartas digitales</span>
   </nav>
 
 <div class="wrap">
@@ -76,7 +68,7 @@
     <div>
       <p class="hero-eyebrow">Carta digital · QR · Sin app</p>
       <h1>Tu carta en el celu de tus clientes. <em>La cambiás vos</em>, en un minuto.</h1>
-      <p class="lede">Para bares, cafés y restaurantes. Se abre con un QR, lleva tu marca y se actualiza desde una planilla. Sin app, sin PDF y sin llamarme cada vez que sube un precio.</p>
+      <p class="lede">Para cualquier emprendimiento gastronómico: restaurantes, bares, cafés, hamburgueserías, pizzerías, dark kitchens o food trucks. Se abre con un QR, lleva tu marca y se actualiza desde una planilla. Sin app, sin PDF y sin llamarme cada vez que sube un precio.</p>
       <div class="hero-actions">
         <a class="btn" href="#contacto">Quiero ver la mía</a>
         <a class="btn ghost" href="#planilla">Probala acá</a>
@@ -170,8 +162,8 @@
 
   <section>
     <div class="section-label"><span class="n">[03]</span>Ejemplos</div>
-    <h2>Dos cartas reales, <span>funcionando</span></h2>
-    <p class="sub">Abrilas desde el celu. Son locales distintos, con marca y estilo propios. Lo único en común es cómo se administran.</p>
+    <h2>Cuatro cartas reales, <span>funcionando</span></h2>
+    <p class="sub">Abrilas desde el celu. Son rubros distintos, con marca y estilo propios. Lo único en común es cómo se administran.</p>
     <div class="demos">
       <div class="demo">
         <a class="shot" href="https://pesto-chivilcoy.netlify.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
@@ -181,6 +173,24 @@
         <span class="kind">Carta con pedidos</span>
         <p>Pizzería y empanadería. El cliente arma el pedido, ve el total y lo manda ya escrito por WhatsApp.</p>
         <a href="https://pesto-chivilcoy.netlify.app/" target="_blank" rel="noopener">Navegar la carta →</a>
+      </div>
+      <div class="demo">
+        <a class="shot" href="https://bastadsburgers.netlify.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <img src="/carta-digital/assets/img/demo-bastards.jpg" width="390" height="844" loading="lazy" alt="">
+        </a>
+        <h3>Bastard’s</h3>
+        <span class="kind">Carta con pedidos</span>
+        <p>Hamburguesería. Promos destacadas arriba, categorías de burgas, papas y bebidas, y pedido por WhatsApp.</p>
+        <a href="https://bastadsburgers.netlify.app/" target="_blank" rel="noopener">Navegar la carta →</a>
+      </div>
+      <div class="demo">
+        <a class="shot" href="https://ronin-burga.netlify.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <img src="/carta-digital/assets/img/demo-ronin.jpg" width="390" height="844" loading="lazy" alt="">
+        </a>
+        <h3>Burger Must</h3>
+        <span class="kind">Carta con pedidos</span>
+        <p>Hamburguesería de autor. Feed de fotos a pantalla completa, vista en grilla y carrito.</p>
+        <a href="https://ronin-burga.netlify.app/" target="_blank" rel="noopener">Navegar la carta →</a>
       </div>
       <div class="demo">
         <a class="shot" href="https://olazabal-prueba.netlify.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
@@ -199,7 +209,7 @@
     <h2>Tres pasos <span>simples</span></h2>
     <div class="steps">
       <div class="step"><b>Me pasás lo que tenés</b><span>Logo, colores, platos y precios. Con una foto de tu carta actual alcanza.</span></div>
-      <div class="step"><b>Te la muestro armada</b><span>La ves en tu celu con tu marca y tus platos, antes de decidir nada.</span></div>
+      <div class="step"><b>Armo una maqueta</b><span>Te la preparo con tu marca y tus platos y la ves en tu celu, antes de decidir nada.</span></div>
       <div class="step"><b>La manejás vos</b><span>Imprimís el QR y, desde una planilla, cambiás lo que quieras cuando quieras.</span></div>
     </div>
   </section>
@@ -213,6 +223,7 @@
       <div>Platos agotados con un “NO”<small>La fila desaparece de la carta al instante, sin borrarla.</small></div>
       <div>Sin app para instalar<small>El cliente escanea el QR y listo. Carga liviana.</small></div>
       <div>Cómo llegar, Instagram y WhatsApp<small>Todo a un toque, sin buscarlo.</small></div>
+      <div>Link de reseñas de Google<small>Un botón directo para que tus clientes te dejen su reseña.</small></div>
       <div>Pensada para el celu<small>Textos legibles, botones cómodos de tocar y carga rápida.</small></div>
     </div>
   </section>
@@ -228,7 +239,7 @@
         <ul>
           <li>Carta con tu marca, por categorías</li>
           <li>Planilla para administrarla</li>
-          <li>Cómo llegar, Instagram y WhatsApp</li>
+          <li>Cómo llegar, Instagram, WhatsApp y link de reseñas</li>
           <li>QR listo para imprimir</li>
         </ul>
       </div>
@@ -246,7 +257,7 @@
     </div>
     <div class="maint">
       <span>Mantenimiento opcional: cargo yo los cambios y te doy soporte.</span>
-      <span><b>AR$ 35.000</b> <small>por mes, cancelable</small></span>
+      <span><b>AR$ 20.000</b> <small>por mes, cancelable</small></span>
     </div>
     <p class="fine">Dominio y hosting corren por cuenta del local y quedan a su nombre: el dominio ronda los AR$ 18.000 por año y el hosting de una carta es liviano, con opciones gratuitas. Yo los configuro y te aviso antes de cada vencimiento. Pago: 50 % al confirmar y 50 % contra publicación.</p>
   </section>
@@ -270,7 +281,7 @@
   </div>
 
   <footer>
-    <span>CUFA · Desarrollo web</span>
+    <span class="sig">CUFA.</span>
     <a href="/">cufadev.xyz</a>
   </footer>
 
