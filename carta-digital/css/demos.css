@@ -19,3 +19,5 @@
   transition:transform .35s cubic-bezier(.23,1,.32,1);
 }
 @media (hover:hover){.demo:hover .shot img{transform:translateY(-8px)}}
+
+.demo p b{color:var(--ink);font-weight:600}
