@@ -25,6 +25,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/galeria.css">
 <link rel="stylesheet" href="css/proyectos.css">
+<script src="/js/transicion.js?v=5"></script>
 </head>
 <body>
 
@@ -48,7 +49,7 @@
 <div class="page-wrap">
   <div class="page-header">
     <div>
-      <div class="section-label">Casos de estudio</div>
+      <div class="section-label">Proyectos de clientes</div>
       <h1 class="page-titulo">
         Más<br>
         <span>proyectos</span>
@@ -61,6 +62,57 @@
     </div>
   </div>
   <div class="casos-grid proyectos-grid">
+
+      <!-- Gualicho Beer -->
+      <div class="caso-card">
+        <div class="caso-thumb">
+          <span class="caso-industry" data-i18n="caso.001.industry">Cervecería</span>
+          <iframe src="https://www.gualicho.beer/" title="Gualicho Beer" loading="lazy"></iframe>
+        </div>
+        <div class="caso-info">
+          <div class="caso-num">002</div>
+          <div class="caso-nombre">Gualicho Beer</div>
+          <ul class="caso-ecosistema" data-i18n="caso.001.eco">
+            <li>Cervecería artesanal sin presencia digital ni sistema de ventas</li>
+            <li>Web + identidad + QR en punto de venta para pedidos sin cola</li>
+            <li>Sistema de alquiler de choperas integrado para eventos</li>
+          </ul>
+          <div class="caso-tags">
+            <span class="tag">Web</span>
+            <span class="tag">UX/UI</span>
+            <span class="tag">Sistema SaaS</span>
+            <span class="tag" data-i18n="caso.en-desarrollo">En desarrollo</span>
+          </div>
+          <a href="https://www.gualicho.beer/" class="caso-link" target="_blank" rel="noopener"><span
+              data-i18n="caso.link">Ver proyecto</span> <span class="caso-link-arrow">↗</span></a>
+        </div>
+      </div>
+
+      <!-- Lugo -->
+      <div class="caso-card">
+        <div class="caso-thumb">
+          <span class="caso-industry" data-i18n="caso.010.industry">Gastronomía</span>
+          <iframe src="https://lugo.ar" title="Lugo" loading="lazy"></iframe>
+        </div>
+        <div class="caso-info">
+          <div class="caso-num">004</div>
+          <div class="caso-nombre">Lugo</div>
+          <ul class="caso-ecosistema" data-i18n="caso.010.eco">
+            <li>Landing pre-lanzamiento con countdown activo</li>
+            <li>Sistema de pedidos online</li>
+            <li>Captación de emails y lista de espera</li>
+            <li>Web para panadería artesanal de BA, sobre la identidad de la marca</li>
+          </ul>
+          <div class="caso-tags">
+            <span class="tag">React</span>
+            <span class="tag">Vite</span>
+            <span class="tag">Tailwind</span>
+            <span class="tag" data-i18n="caso.en-desarrollo">En desarrollo</span>
+          </div>
+          <a href="https://lugo.ar" class="caso-link" target="_blank" rel="noopener"><span data-i18n="caso.link">Ver
+              proyecto</span> <span class="caso-link-arrow">↗</span></a>
+        </div>
+      </div>
 
       <!-- 2: CGYRM — span 5, row 1 -->
       <div class="caso-card">
@@ -84,6 +136,56 @@
           </div>
           <a href="https://estudiojuridicocyorynm.com.ar/" class="caso-link" target="_blank" rel="noopener"><span
               data-i18n="caso.link">Ver proyecto</span> <span class="caso-link-arrow">↗</span></a>
+        </div>
+      </div>
+
+      
+
+      <!-- Guillén: web rediseñada, estudio de ciudadanía italiana (copia demo en /guillen) -->
+      <div class="caso-card">
+        <div class="caso-thumb">
+          <span class="caso-industry" data-i18n="caso.002.industry">Estudios profesionales</span>
+          <iframe src="guillen/index.html" title="Guillén · Ciudadanía italiana" loading="lazy"></iframe>
+        </div>
+        <div class="caso-info">
+          <div class="caso-num">015</div>
+          <div class="caso-nombre">Guillén · Ciudadanía italiana</div>
+          <ul class="caso-ecosistema">
+            <li>Web rediseñada para un estudio jurídico, pensada primero para celular</li>
+            <li>De 11 MB a menos de 1 MB, con scroll fluido y animaciones</li>
+            <li>Formulario de contacto con validación y protección anti-spam</li>
+          </ul>
+          <div class="caso-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">GSAP</span>
+            <span class="tag">UX/UI</span>
+          </div>
+          <a href="guillen/index.html" class="caso-link" target="_blank" rel="noopener"><span>Ver proyecto</span> <span class="caso-link-arrow">↗</span></a>
+        </div>
+      </div>
+
+      <!-- Gonzalez Furchi: web de corredores de seguros, pieza de portfolio (copia demo en /fursales) -->
+      <div class="caso-card">
+        <div class="caso-thumb">
+          <span class="caso-industry">Seguros</span>
+          <iframe src="fursales/index.html" title="Gonzalez Furchi · Seguros" loading="lazy"></iframe>
+        </div>
+        <div class="caso-info">
+          <div class="caso-num">016</div>
+          <div class="caso-nombre">Gonzalez Furchi · Seguros</div>
+          <ul class="caso-ecosistema">
+            <li>Landing para corredores de seguros de la Zona Oeste, con cotización a un toque</li>
+            <li>Formulario que cambia según el seguro: nuevo o usado, rubro del comercio</li>
+            <li>Preguntas frecuentes, scroll fluido con GSAP y menos de 400 KB de imágenes</li>
+          </ul>
+          <div class="caso-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">GSAP</span>
+            <span class="tag">UX/UI</span>
+          </div>
+          <a href="fursales/index.html" class="caso-link" target="_blank" rel="noopener"><span>Ver proyecto</span> <span class="caso-link-arrow">↗</span></a>
         </div>
       </div>
 
